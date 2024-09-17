@@ -11,9 +11,12 @@ int main()
 	int height = 13;
 	double area = 0.0;
 
-	//calculate and display area
-	area = base * height / 2;
-	cout << "Area: " << area << endl;
+    	//calculate and display area
+    	area = (base * height) / 2.0;  // Use 2.0 to ensure floating-point division
+    	cout << "Area: " << area << endl;
 
 	return 0;
 }	//end of main function
+/*
+Area: 71.5
+*/
