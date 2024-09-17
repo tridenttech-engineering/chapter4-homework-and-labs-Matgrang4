@@ -1,5 +1,5 @@
 //Lab4-6.cpp - displays the area of a triangle
-//Created/revised by <your name> on <current date>
+//Created/revised by <Matt Granger> on <9/17/24>
 
 #include <iostream>
 using namespace std;
