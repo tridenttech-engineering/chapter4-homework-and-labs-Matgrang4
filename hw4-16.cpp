@@ -37,7 +37,7 @@ int main() {
 
     return 0;
 } // end of main function
-*/
+/*
 Store 1 sales: 1000
 Store 2 sales: 1500
 
@@ -45,7 +45,7 @@ Store 2 sales: 1500
 1575.00 --->Store 2
 -----------------
 2625.00 --->Total
-/*
+*/
 
 //1.  Declare and initalize three int variables named store1Int, store2Int, and totalInt
 //2.  Change the first assignment statement to store1Int = static_cast<int>(store1 * increase * 100 + .5);
