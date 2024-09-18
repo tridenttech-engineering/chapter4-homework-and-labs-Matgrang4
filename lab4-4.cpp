@@ -2,7 +2,6 @@
 // Created/revised by Matt Granger on 9/17/24
 
 #include <iostream>
-#include <iomanip> // For fixed and setprecision
 using namespace std;
 
 int main() {
