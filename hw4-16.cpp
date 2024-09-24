@@ -2,55 +2,41 @@
 // Created/revised by <Matt Granger> on <current date>
 
 #include <iostream>
-#include <iomanip>
+#include <iomanip> // for fixed and setprecision
+
 using namespace std;
 
 int main() {
-    // Declare constants and variables
-    const double increase = 1.05;
-    double store1 = 0.0;
-    double store2 = 0.0;
-    double total = 0.0;
-
-    // Declare and initialize three int variables
-    int store1Int = 0;
-    int store2Int = 0;
-    int totalInt = 0;
+    // Declare variables for sales
+    double store1Sales = 0.0;
+    double store2Sales = 0.0;
+    double totalSales = 0.0;
 
     // Input sales for Store 1 and Store 2
-    cout << "Store 1 sales: ";
-    cin >> store1;
-    cout << "Store 2 sales: ";
-    cin >> store2;
+    cout << "Enter sales for Store 1: ";
+    cin >> store1Sales;
 
-    // Calculate the sales with the increase and convert to integers (in cents)
-    store1Int = static_cast<int>(store1 * increase * 100 + 0.5);
-    store2Int = static_cast<int>(store2 * increase * 100 + 0.5);
-    totalInt = store1Int + store2Int;
+    cout << "Enter sales for Store 2: ";
+    cin >> store2Sales;
 
-    // Display the sales with 2 decimal points by converting them back to dollars
-    cout << fixed << setprecision(2) << endl;
-    cout << store1Int / 100.0 << " --->Store 1" << endl;
-    cout << store2Int / 100.0 << " --->Store 2" << endl;
-    cout << "-----------------" << endl;
-    cout << totalInt / 100.0 << " --->Total" << endl;
+    // Calculate total sales
+    totalSales = store1Sales + store2Sales;
+
+    // Output the total sales with fixed and setprecision for 2 decimal places
+    cout << fixed << setprecision(2);
+    cout << "Total Sales: $" << totalSales << endl;
+
+    // Adjusted total with rounding correction (+0.5) to improve precision issues
+    store1Sales = store1Sales + 0.5;
+    store2Sales = store2Sales + 0.5;
+    totalSales = store1Sales + store2Sales;
+
+    // Display the adjusted total sales
+    cout << "Adjusted Total Sales: $" << totalSales << endl;
 
     return 0;
+}
 } // end of main function
-/*
-Store 1 sales: 1000
-Store 2 sales: 1500
+g++ -o hw4-16 hw4-16.cpp
+./hw4-16
 
-1050.00 --->Store 1
-1575.00 --->Store 2
------------------
-2625.00 --->Total
-*/
-
-//1.  Declare and initalize three int variables named store1Int, store2Int, and totalInt
-//2.  Change the first assignment statement to store1Int = static_cast<int>(store1 * increase * 100 + .5);
-//3.  Change the second assignment statement to store2Int = static_cast<int>(store2 * increase * 100 + .5);
-//4.  Change the third assignment statement to totalInt = store1Int + store2Int;
-//5.  Change store1 in the second cout statement to store1Int / 100.0
-//6.  Change store2 in the third cout statement to store2Int / 100.0
-//7.  Change total in the last cout statement to totalInt / 100.0
