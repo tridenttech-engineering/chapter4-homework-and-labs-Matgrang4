@@ -1,41 +1,39 @@
 // Lab4-4.cpp - displays the volume of a cylinder
 // Created/revised by Matt Granger on 9/17/24
 
-#include <iostream>
+#include <iostream> // Needed to use cin and cout
+#include <cmath>    // Needed to use pow function for squaring
+
 using namespace std;
 
 int main() {
-    // Declare variables
-    double height = 0.0;
+    // Declare variables for radius, height, and volume
     double radius = 0.0;
+    double height = 0.0;
     double volume = 0.0;
-    const double PI = 3.14159; // More accurate value of Pi
 
-    // Input the radius of the cylinder
-    cout << "Radius: ";
+    // Define pi as 3.14
+    const double PI = 3.14;
+
+    // Prompt the user to enter the radius and height of the cylinder
+    cout << "Enter the radius of the cylinder: ";
     cin >> radius;
 
-    // Input the height of the cylinder
-    cout << "Height: ";
+    cout << "Enter the height of the cylinder: ";
     cin >> height;
 
-    // Check for invalid inputs (optional, but useful)
-    if (radius <= 0 || height <= 0) {
-        cout << "Error: Radius and height must be positive values." << endl;
-        return 1;
-    }
-
     // Calculate the volume of the cylinder using the formula π * r^2 * h
-    volume = PI * radius * radius * height;
+    volume = PI * pow(radius, 2) * height;
 
-    // Display the volume of the cylinder with 2 decimal precision
-    cout << fixed << setprecision(2);
-    cout << "Volume: " << volume << " cubic units" << endl;
+    // Display the calculated volume
+    cout << "The volume of the cylinder is: " << volume << endl;
 
-    return 0;
+    return 0; // End of the program
+}
 } // end of main function
-/*
-Radius: 3
-Height: 5
-Volume: 141.3 cubic units
-*/
+make clean
+make lab4-4
+./lab4-4
+make test_lab4-4
+./test_files/test_lab4-4
+
